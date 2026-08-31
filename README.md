@@ -2,7 +2,7 @@
 
 Prompt templates for Grok Bot automations for marketing and sales (GTM).
 
-Layout copied from [dabit3/cloud-agent-automations](https://github.com/dabit3/cloud-agent-automations). Each template is a complete prompt you paste into a new Grok Bot session.
+Layout copied from [dabit3/cloud-agent-automations](https://github.com/dabit3/cloud-agent-automations).
 
 Each template is a complete prompt that tells Grok Bot to create an automation, including the recommended trigger. No code is required.
 
