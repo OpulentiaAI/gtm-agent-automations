@@ -5,9 +5,53 @@
 **Trigger:** morning and afternoon weekday clocks · Create Disabled until Enable  
 **Mode:** hub and spoke · draft then wait · not a builder and not an auditor
 
+## Overview
+
 The single front door for the bot team. Inbox Manager, Calendar EA, and Intel Scout report here. When a specialist has an update, Bot Boss receives it and tells you. When you have a question, Bot Boss gets the answer from the right bot. You never talk to the specialists directly.
 
 Three new work surfaces can raise mental load even as output goes up. Bot Boss is the fourth agent: the one that consolidates the other three so you get one stream, not three pings.
+
+## What's Needed From User
+
+- Slack or text as the one stream
+- Live Inbox Manager, Calendar EA, and Intel Scout automations (or an honest `UNVERIFIED` spoke)
+- Morning and afternoon weekday clocks
+- Enable after one morning board — clocks stay Disabled until you hit Enable
+
+Stand the three specialists up first. Bot Boss with no spokes is not a desk.
+
+## Procedure
+
+1. Confirm Inbox Manager, Calendar EA, and Intel Scout exist and can produce a board, pack, and brief.
+2. Connect the single stream (Slack DM or named channel). Do not also subscribe yourself to every specialist ping.
+3. Paste the prompt below. Leave Create Disabled.
+4. Run one morning board. Expect themes, priorities, and one impact play — not three pasted specialist dumps.
+5. Ask one test question that belongs to a spoke (inbox, calendar, or intel). Confirm the answer comes back in this stream and you did not have to talk to the specialist.
+6. Enable morning and afternoon clocks only after that board is one stream.
+7. Validate the next afternoon: non-obvious only, no reprint of morning, no send or calendar write, no @-mention that retriggers a specialist clock.
+
+## Specifications
+
+- One front door; specialists are not a second inbox
+- Morning = themes, priorities, one impact play; afternoon = non-obvious only
+- Quality-gate before anything ships to you; unverified or duplicate work is dropped
+- Drafts for send or calendar write wait for your approval
+- Validation: the morning board must name a source spoke for each priority, or mark that spoke `UNVERIFIED`. A clean day is silence, not a fake standup
+
+## Advice and Pointers
+
+- Hub and spoke EA, not a builder and not an auditor
+- If a spoke has not run, say `UNVERIFIED` — do not invent their board
+- Use [Stand up an Opulent agent](../PLAYBOOK.md) for each specialist, then this file for the hub
+
+## Forbidden Actions
+
+- Do not invent urgency or facts the specialist did not cite
+- Do not send or write the calendar
+- Do not tell a specialist to send
+- Do not build new automations or audit spend from this role
+- Do not @-mention specialists in a way that retriggers their clocks
+- Do not become a fourth firehose
 
 ## Prompt
 

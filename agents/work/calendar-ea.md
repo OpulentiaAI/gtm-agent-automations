@@ -5,9 +5,53 @@
 **Trigger:** morning and afternoon weekday clocks · Create Disabled until Enable  
 **Mode:** draft moves and invites only after you confirm · never write the calendar silently
 
+## Overview
+
 Defends deep-focus time the way an executive assistant would: stack and bookend meetings, keep rooms close together, flag conflicts, and never let pickup get scheduled over. Calendars are personal. This agent learns your quirks and upholds them when other people try to fill the gaps.
 
 When you book a meeting, place it against other meetings so large focus windows survive. When someone else books you, Calendar EA is the defense.
+
+## What's Needed From User
+
+- Google Calendar (read on day one; write only if you later want confirmed drafts applied)
+- Slack or text for the conflict pack
+- Written quirks: focus windows, pickup hard stop, personal vs work (example: “pickup 15:30 local, no new meetings after 15:00, deep work 09:00–12:00”)
+- Horizon (default: this week plus next)
+- Enable after the first clean pack — clocks stay Disabled until you hit Enable
+
+Do not grant silent write on the calendar.
+
+## Procedure
+
+1. Connect Calendar read-only and the channel where the pack should land.
+2. Write focus windows, pickup, and personal-vs-work rules into the session or the Sheet the prompt names.
+3. Paste the prompt below. Leave Create Disabled.
+4. Run one manual morning pack. Confirm a fresh pull (no leftover meetings from a prior snapshot).
+5. Check one conflict: named options plus an explicit Default, rooms stacked, pickup respected.
+6. Enable morning and afternoon clocks only after that pack is right. A fire at noon or later must merge into the afternoon pack.
+7. Validate the next live tick: one pack or silence, no invite sent, no attendee invented. Confirm a scheduling ask produces slots + Default only after you ask.
+
+## Specifications
+
+- Every run starts from a live calendar pull
+- Conflicts, focus cuts, and pickup collisions include named options and a Default
+- Moves and invites stay drafts until you confirm
+- Late fires do not become a second morning pack
+- Validation: compare the pack to the live calendar UI. Every meeting cited must exist; every Default slot must keep pickup and focus rules
+
+## Advice and Pointers
+
+- Persist rules (quirks), not a cached meeting list
+- Ask once and stop when attendee, duration, or timezone is missing
+- Short EA voice; conflicts first
+
+## Forbidden Actions
+
+- Do not invent an attendee, room, or meeting
+- Do not write the calendar silently
+- Do not send, accept, or decline without confirm
+- Do not offer a slot that makes pickup late
+- Do not start a second morning briefing after noon
 
 ## Prompt
 

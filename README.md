@@ -12,21 +12,44 @@ Opulent starts the automation when a schedule, Slack message, email, Stripe even
 
 ## How to use the templates
 
+Use the playbook in [agents/PLAYBOOK.md](agents/PLAYBOOK.md). Short version:
+
+### Overview
+
+Paste one agent prompt into Opulent, connect only the named tools, and Enable only after a first run you can check.
+
+### What's Needed From User
+
+- The agent file
+- An Opulent session
+- The MCPs on that file’s **Uses** line (read-only when the agent only reads)
+- Your channel, Sheet, calendar, and timezone names
+
+### Procedure
+
 1. Choose an agent from the folders below.
 2. Copy the full prompt, including the `Create an Opulent automation` line and the trigger.
-3. If the example names, channels, or schedule do not match your environment, change them in the prompt.
-4. Paste the prompt into a new Opulent session. Opulent creates the automation and asks about any missing details, such as the exact Slack channel, CRM object, or calendar.
-5. If the template uses an MCP, connect that MCP before the first run.
-6. Give each MCP connection the least access that the template needs. If a template only reads data, connect read-only credentials.
+3. Replace example names with yours. Leave the job and the safety lines intact.
+4. Paste into a new Opulent session. Leave clocks Disabled.
+5. Connect the named MCPs with least privilege. Read-only if the template only reads.
+6. Run one first-open or manual tick. Confirm a single output or justified silence.
+7. Enable the clock only after that check. Validate the next live tick the same way.
+
+### Specifications
+
+- One automation, intended trigger, least-privilege connectors
+- No send, calendar write, pay, merge, or publish unless you typed `send`
+- Validation: run log + destination thread show one post (or silence), citations or `UNVERIFIED`, no loop
 
 The prompts contain safety rules, for example "Never auto-send outbound", "Fail closed", "Quiet on noop", and "If the bot posted the message, stop". These rules guide Opulent, but they are not a security boundary. The credentials that you connect set the real limit on what Opulent can do.
 
-Connect the named MCPs first. Do not grant send, write, or admin access unless the template needs it. Clocks stay **Disabled until you hit Enable** unless a prompt says otherwise. Drafts wait for you to type `send` in that moment.
+Work agents include a full playbook on the file. GTM has a send-gated playbook in [agents/gtm/README.md](agents/gtm/README.md). Catalog files stay prompt-first.
 
 ## Folder layout
 
 ```text
 agents/
+  PLAYBOOK.md     Stand up any agent (shared setup)
   work/           Inbox Manager, Calendar EA, Intel Scout, Bot Boss
   founders/       EA, inbound, closer, burn, digest, chief of staff, …
   engineering/    cloud coder, CI, prod, security, migrations, …
@@ -44,7 +67,7 @@ agents/
   gtm/            outbound, inbound, meetings-crm, marketing-content, account-enablement
 ```
 
-Every folder has its own `README.md` index. Every agent file has the same shape: title, uses, trigger, mode, a short brief, then the paste-ready prompt.
+Every folder has its own `README.md` index. Agent files have title, uses, trigger, mode, a short brief, and the paste-ready prompt. Work agents also have Overview / What's Needed / Procedure / Specifications because they are a live desk. Catalog agents do not repeat that wrapper.
 
 ## Quality bar
 

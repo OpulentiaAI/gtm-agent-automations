@@ -2,6 +2,42 @@
 
 Prompt templates for Opulent automations for marketing and sales. Each file is a complete prompt, including the recommended trigger. No code is required.
 
+## Playbook: Stand up a GTM template
+
+### Overview
+
+Turn one GTM file into a paused automation: the named MCPs, your channel and Sheet names, and a first run that cannot send.
+
+### What's Needed From User
+
+- The template file (example: `outbound/icp-builder-linkedin-outbound.md`)
+- MCPs listed in that file (Gojiberry, Slack, Salesforce or HubSpot, Gmail, Calendar, Sheets, Gong or Granola, and so on)
+- Destination Slack channel, Sheet tab, and CRM object names
+- Send authority only after domain warmup, volume caps, and a human review path exist
+
+### Procedure
+
+1. Open the template and list **Uses** and the Trigger.
+2. Connect those MCPs with least privilege. Keep send and ad-spend scopes off until a later approve step.
+3. Copy the full prompt. Replace `#gtm-*` channels, Sheet tabs, and timezones with yours.
+4. Paste into a new Opulent session. Create the automation Disabled or paused.
+5. Run one tick. Confirm the digest or review pack landed once and asked for approval.
+6. Validate CRM/Sheet rows against the sources the prompt cited. Enable the schedule only after that pack is clean.
+
+### Specifications
+
+- First run is draft / paused campaign / Slack review pack — never a live send
+- Loop guard held: the bot’s own post did not start a second run
+- Validation: open the Slack thread and the Sheet. Count of leads or meetings must match rows you can click; missing enrichment is blank, not invented
+
+### Forbidden Actions
+
+- Do not auto-send outbound, InMail, or customer email from the first run
+- Do not invent research, emails, or employee counts
+- Do not grant admin CRM or unrestricted ad-account write to stand the template up
+
+Shared setup steps: [Stand up an Opulent agent](../PLAYBOOK.md).
+
 ## Folders
 
 - [Outbound / prospecting](outbound/README.md)

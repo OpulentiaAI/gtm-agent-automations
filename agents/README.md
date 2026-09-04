@@ -2,6 +2,8 @@
 
 Each Opulent agent is a markdown file with a paste-ready prompt. Start from a folder, then open the agent.
 
+Setup for any file: [Stand up an Opulent agent](PLAYBOOK.md). The Work desk also has a four-agent playbook in [work/README.md](work/README.md). GTM templates have a send-gated playbook in [gtm/README.md](gtm/README.md). Catalog files stay prompt-first; do not expect a full playbook on every one.
+
 | Folder | What lives here |
 | --- | --- |
 | [work](work/README.md) | Inbox Manager, Calendar EA, Intel Scout, Bot Boss |

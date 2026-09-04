@@ -50,6 +50,43 @@ If Opulent is managing your work and itself, what does that mean for the job?
 
 Mental clarity. Zoom out, identify where the leverage is, and focus time on the highest priorities. That's the difference between a tool requiring your time versus empowering you to maximize yours.
 
+## Playbook: Stand up the Work desk
+
+### Overview
+
+Stand Inbox Manager, Calendar EA, and Intel Scout, then put Bot Boss in front so you get one stream instead of three pings. Same jobs as the files below. Setup only.
+
+### What's Needed From User
+
+- Read-only email, Slack, DMs, Calendar, and meeting notes
+- Timezone and quirks (focus windows, pickup hard stop)
+- One stream for Bot Boss (Slack DM or named channel)
+- Enable after each first-open — all four clocks start Disabled
+
+### Procedure
+
+1. Stand [Inbox Manager](inbox-manager.md) with read-only mail/Slack/DMs. Validate widget then fire board.
+2. Stand [Calendar EA](calendar-ea.md) with a live calendar pull and written quirks. Validate options + Default on one conflict.
+3. Stand [Intel Scout](intel-scout.md) with notes + inbox + Slack. Validate a three-part cited brief or silence.
+4. Stand [Bot Boss](bot-boss.md) last. Point it at the three specialists and the one stream.
+5. Disable direct specialist pings to you so only Bot Boss talks.
+6. Enable clocks only after one morning board shows themes, priorities, and one impact play.
+7. Validate the next afternoon: non-obvious only, no specialist retrigger, no send.
+
+### Specifications
+
+- Four automations exist; Bot Boss is the only front door
+- Specialists stay on-job (inbox / calendar / intel); Bot Boss does not build or audit
+- Validation: one morning board you can open, each priority tied to a spoke or marked `UNVERIFIED`
+
+### Forbidden Actions
+
+- Do not Enable all four clocks before first-open
+- Do not let the three specialists page you in parallel with Bot Boss
+- Do not grant send or calendar write on day one
+
+For a single agent, use [Stand up an Opulent agent](../PLAYBOOK.md).
+
 ## Agents
 
 - [Inbox Manager](inbox-manager.md) — first line of defense on email, Slack, and DMs · uses `email, Slack, DMs / text`
