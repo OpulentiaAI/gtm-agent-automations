@@ -5,7 +5,52 @@
 **Trigger:** a new message in the beta Slack or Intercom beta inbox  
 **Mode:** answer from docs · escalate rare · no roadmap promises
 
-Answers users all day and escalates only what needs you.
+## Overview
+
+Answers users all day and escalates only what needs you
+
+## What's Needed From User
+
+- Connectors: `Slack, Intercom` — least privilege that matches **Mode** (`answer from docs · escalate rare · no roadmap promises`)
+- Trigger: a new message in the beta Slack or Intercom beta inbox
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Example inputs: Slack channel or DM (example: `#eng` or a private DM)
+
+## Procedure
+
+1. Connect Slack, Intercom. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Beta Channel Host"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Create the automation. Run one first tick on a real trigger, not a invented one.
+5. Check the output against the job: Answers users all day and escalates only what needs you.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Keep Beta Channel Host on the named trigger only after that first output matches the job.
+8. Validate the next live fire of `a new message in the beta Slack or Intercom beta inbox`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Beta Channel Host does this and nothing else — Answers users all day and escalates only what needs you
+- Mode holds: answer from docs · escalate rare · no roadmap promises
+- Safety: Never invent product behavior. Never promise dates. Escalate only what needs a human
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in Slack, Intercom, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not fire the trigger on fake data to “warm it up”
+- Do not ignore: Never invent product behavior. Never promise dates. Escalate only what needs a human
 
 ## Prompt
 

@@ -43,7 +43,7 @@ Paste one agent prompt into Opulent, connect only the named tools, and Enable on
 
 The prompts contain safety rules, for example "Never auto-send outbound", "Fail closed", "Quiet on noop", and "If the bot posted the message, stop". These rules guide Opulent, but they are not a security boundary. The credentials that you connect set the real limit on what Opulent can do.
 
-Work agents include a full playbook on the file. GTM has a send-gated playbook in [agents/gtm/README.md](agents/gtm/README.md). Catalog files stay prompt-first.
+Every agent file now has Overview, What's Needed From User, Procedure, Specifications, Advice, and Forbidden Actions. The session prompt under **Prompt** is still the job; the playbook is how you stand it up and check the first run. GTM also has a send-gated desk playbook in [agents/gtm/README.md](agents/gtm/README.md).
 
 ## Folder layout
 
@@ -67,7 +67,7 @@ agents/
   gtm/            outbound, inbound, meetings-crm, marketing-content, account-enablement
 ```
 
-Every folder has its own `README.md` index. Agent files have title, uses, trigger, mode, a short brief, and the paste-ready prompt. Work agents also have Overview / What's Needed / Procedure / Specifications because they are a live desk. Catalog agents do not repeat that wrapper.
+Every folder has its own `README.md` index. Every agent file has title, uses, trigger, mode, a playbook (Overview / What's Needed / Procedure / Specifications / Forbidden Actions), and the paste-ready prompt.
 
 ## Quality bar
 

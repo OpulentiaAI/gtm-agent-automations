@@ -5,7 +5,52 @@
 **Trigger:** a new vendor questionnaire in email or Drive  
 **Mode:** library-filled questionnaire · human leftovers
 
-Does the vendor questionnaire without anyone opening the PDF.
+## Overview
+
+Does the vendor questionnaire without anyone opening the PDF
+
+## What's Needed From User
+
+- Connectors: `Google Drive, Notion, email` — least privilege that matches **Mode** (`library-filled questionnaire · human leftovers`)
+- Trigger: a new vendor questionnaire in email or Drive
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Example inputs: Notion database or page (example: the runbook wiki); mailbox (example: `you@company.com`, read-only unless the mode says send)
+
+## Procedure
+
+1. Connect Google Drive, Notion, email. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Security Reviewer (Vendors)"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Create the automation. Run one first tick on a real trigger, not a invented one.
+5. Check the output against the job: Does the vendor questionnaire without anyone opening the PDF.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Keep Security Reviewer (Vendors) on the named trigger only after that first output matches the job.
+8. Validate the next live fire of `a new vendor questionnaire in email or Drive`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Security Reviewer (Vendors) does this and nothing else — Does the vendor questionnaire without anyone opening the PDF
+- Mode holds: library-filled questionnaire · human leftovers
+- Safety: Never invent a control, cert, or insurance. Never auto-submit. Never paste secrets into the questionnaire
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in Google Drive, Notion, email, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not fire the trigger on fake data to “warm it up”
+- Do not ignore: Never invent a control, cert, or insurance. Never auto-submit. Never paste secrets into the questionnaire
 
 ## Prompt
 

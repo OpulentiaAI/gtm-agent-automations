@@ -5,7 +5,53 @@
 **Trigger:** a weekday clock while an event is open, plus a /event command  
 **Mode:** Luma + waitlist + gated community drops
 
-Maintains Luma, the waitlist, and markets it by dropping and listing it in relevant communities online.
+## Overview
+
+Maintains Luma, the waitlist, and markets it by dropping and listing it in relevant communities online
+
+## What's Needed From User
+
+- Connectors: `cloud browser, Slack, email` — least privilege that matches **Mode** (`Luma + waitlist + gated community drops`)
+- Trigger: a weekday clock while an event is open, plus a /event command
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Enable after first-open — clocks stay Disabled until you hit Enable
+- Example inputs: Slack channel or DM (example: `#eng` or a private DM); mailbox (example: `you@company.com`, read-only unless the mode says send)
+
+## Procedure
+
+1. Connect cloud browser, Slack, email. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Events Manager"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Leave the automation Disabled. Run one manual first-open or one tick.
+5. Check the output against the job: Maintains Luma, the waitlist, and markets it by dropping and listing it in relevant communities online.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Enable the clock for Events Manager only after that first output matches the job.
+8. Validate the next live fire of `a weekday clock while an event is open, plus a /event command`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Events Manager does this and nothing else — Maintains Luma, the waitlist, and markets it by dropping and listing it in relevant communities online
+- Mode holds: Luma + waitlist + gated community drops
+- Safety: Never invent attendance. Never auto-post in communities. Never silently change the event time
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in cloud browser, Slack, email, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not Enable before a first-open you have checked
+- Do not ignore: Never invent attendance. Never auto-post in communities. Never silently change the event time
 
 ## Prompt
 

@@ -5,7 +5,52 @@
 **Trigger:** a new email with a contract or a Drive file in the review folder  
 **Mode:** inbox first pass · playbook issues · internal
 
-Gives you a first pass on anything that lands in your inbox.
+## Overview
+
+Gives you a first pass on anything that lands in your inbox
+
+## What's Needed From User
+
+- Connectors: `email, Google Drive, Slack` — least privilege that matches **Mode** (`inbox first pass · playbook issues · internal`)
+- Trigger: a new email with a contract or a Drive file in the review folder
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Example inputs: mailbox (example: `you@company.com`, read-only unless the mode says send); Slack channel or DM (example: `#eng` or a private DM)
+
+## Procedure
+
+1. Connect email, Google Drive, Slack. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Contract Reviewer"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Create the automation. Run one first tick on a real trigger, not a invented one.
+5. Check the output against the job: Gives you a first pass on anything that lands in your inbox.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Keep Contract Reviewer on the named trigger only after that first output matches the job.
+8. Validate the next live fire of `a new email with a contract or a Drive file in the review folder`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Contract Reviewer does this and nothing else — Gives you a first pass on anything that lands in your inbox
+- Mode holds: inbox first pass · playbook issues · internal
+- Safety: Never invent a clause. Never send a redline to the counterparty. Never sign. Not a substitute for counsel on a bet-the-company doc
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in email, Google Drive, Slack, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not fire the trigger on fake data to “warm it up”
+- Do not ignore: Never invent a clause. Never send a redline to the counterparty. Never sign. Not a substitute for counsel on a bet-the-company doc
 
 ## Prompt
 

@@ -5,7 +5,53 @@
 **Trigger:** a weekly weekday schedule, plus a PR that touches analytics or forms  
 **Mode:** product vs policy · mismatch file
 
-Keeps the policy matching what the product actually collects.
+## Overview
+
+Keeps the policy matching what the product actually collects
+
+## What's Needed From User
+
+- Connectors: `GitHub, cloud browser, Notion` — least privilege that matches **Mode** (`product vs policy · mismatch file`)
+- Trigger: a weekly weekday schedule, plus a PR that touches analytics or forms
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Enable after first-open — clocks stay Disabled until you hit Enable
+- Example inputs: repo (example: `org/app`); Notion database or page (example: the runbook wiki)
+
+## Procedure
+
+1. Connect GitHub, cloud browser, Notion. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Privacy Auditor"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Leave the automation Disabled. Run one manual first-open or one tick.
+5. Check the output against the job: Keeps the policy matching what the product actually collects.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Enable the clock for Privacy Auditor only after that first output matches the job.
+8. Validate the next live fire of `a weekly weekday schedule, plus a PR that touches analytics or forms`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Privacy Auditor does this and nothing else — Keeps the policy matching what the product actually collects
+- Mode holds: product vs policy · mismatch file
+- Safety: Never invent collection. Never silent-edit the policy. Never ship a new tracker without a flag
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in GitHub, cloud browser, Notion, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not Enable before a first-open you have checked
+- Do not ignore: Never invent collection. Never silent-edit the policy. Never ship a new tracker without a flag
 
 ## Prompt
 

@@ -5,7 +5,52 @@
 **Trigger:** a new question in #data, or a mention of this agent  
 **Mode:** #data · query attached · read-only
 
-Lives in #data. Answers with the query it ran, so anyone can check the work.
+## Overview
+
+Lives in #data. Answers with the query it ran, so anyone can check the work
+
+## What's Needed From User
+
+- Connectors: `Postgres, Amplitude, PostHog, Slack` — least privilege that matches **Mode** (`#data · query attached · read-only`)
+- Trigger: a new question in #data, or a mention of this agent
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Example inputs: Slack channel or DM (example: `#eng` or a private DM)
+
+## Procedure
+
+1. Connect Postgres, Amplitude, PostHog, Slack. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Analyst"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Create the automation. Run one first tick on a real trigger, not a invented one.
+5. Check the output against the job: Lives in #data. Answers with the query it ran, so anyone can check the work.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Keep Analyst on the named trigger only after that first output matches the job.
+8. Validate the next live fire of `a new question in #data, or a mention of this agent`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Analyst does this and nothing else — Lives in #data. Answers with the query it ran, so anyone can check the work
+- Mode holds: #data · query attached · read-only
+- Safety: Never invent a number. Never run writes. Never skip the query in the answer
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in Postgres, Amplitude, PostHog, Slack, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not fire the trigger on fake data to “warm it up”
+- Do not ignore: Never invent a number. Never run writes. Never skip the query in the answer
 
 ## Prompt
 

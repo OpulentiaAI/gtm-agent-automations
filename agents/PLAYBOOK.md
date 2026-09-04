@@ -36,8 +36,8 @@ Do not start if you cannot name the connectors or the destination channel.
 
 ## Advice and Pointers
 
-- Catalog and GTM files are paste-ready prompts. They do not all repeat this playbook; use this file for setup and the prompt for the job.
-- Work agents (`agents/work/`) have full playbook sections because they are a four-agent desk with clocks and a hub.
+- Every agent file also has Overview / What's Needed / Procedure / Specifications / Forbidden Actions. Use those for that job; use this file for the shared setup path.
+- Work agents (`agents/work/`) are a four-agent desk. Stand the specialists, then Bot Boss.
 - Empty search is `UNVERIFIED`, not “zero fires.”
 - A late Calendar EA fire (noon or after) belongs on the afternoon pack.
 

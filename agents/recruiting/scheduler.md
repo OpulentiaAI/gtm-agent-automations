@@ -5,7 +5,52 @@
 **Trigger:** an Ashby stage change I made, or a Slack “schedule them”  
 **Mode:** decision → times in a minute · gated send
 
-Next steps out one minute after you decide, from your calendar and your email.
+## Overview
+
+Next steps out one minute after you decide, from your calendar and your email
+
+## What's Needed From User
+
+- Connectors: `Ashby, Google Calendar, email` — least privilege that matches **Mode** (`decision → times in a minute · gated send`)
+- Trigger: an Ashby stage change I made, or a Slack “schedule them”
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Example inputs: calendar id and timezone (example: primary, `America/Los_Angeles`); mailbox (example: `you@company.com`, read-only unless the mode says send)
+
+## Procedure
+
+1. Connect Ashby, Google Calendar, email. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Scheduler"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Create the automation. Run one first tick on a real trigger, not a invented one.
+5. Check the output against the job: Next steps out one minute after you decide, from your calendar and your email.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Keep Scheduler on the named trigger only after that first output matches the job.
+8. Validate the next live fire of `an Ashby stage change I made, or a Slack “schedule them”`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Scheduler does this and nothing else — Next steps out one minute after you decide, from your calendar and your email
+- Mode holds: decision → times in a minute · gated send
+- Safety: Never invent availability. Never email a candidate a time I did not confirm unless the playbook says so
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in Ashby, Google Calendar, email, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not fire the trigger on fake data to “warm it up”
+- Do not ignore: Never invent availability. Never email a candidate a time I did not confirm unless the playbook says so
 
 ## Prompt
 

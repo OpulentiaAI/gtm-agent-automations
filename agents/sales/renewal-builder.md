@@ -5,7 +5,53 @@
 **Trigger:** a daily weekday schedule looking 60 days out on renewals  
 **Mode:** 60 days out · usage case · I send
 
-Makes the case from usage data, 60 days before the date.
+## Overview
+
+Makes the case from usage data, 60 days before the date
+
+## What's Needed From User
+
+- Connectors: `Postgres, HubSpot, Slack` — least privilege that matches **Mode** (`60 days out · usage case · I send`)
+- Trigger: a daily weekday schedule looking 60 days out on renewals
+- Your names for channels, calendars, repos, Sheet tabs, and timezone
+- Confirm word `send` (or the word the prompt names) for any write
+- Enable after first-open — clocks stay Disabled until you hit Enable
+- Example inputs: CRM object and owner field (example: Opportunity, `OwnerId`); Slack channel or DM (example: `#eng` or a private DM)
+
+## Procedure
+
+1. Connect Postgres, HubSpot, Slack. Grant read-only when the mode is read-only or draft-then-wait.
+2. Copy the `Create an Opulent automation named "Renewal Builder"` prompt, including Trigger.
+3. Replace example names with yours. Do not change the job, the loop guard, or the CAUTION.
+4. Leave the automation Disabled. Run one manual first-open or one tick.
+5. Check the output against the job: Makes the case from usage data, 60 days before the date.
+6. Open every cited source (thread, PR, invoice, event). Mark the run failed if a fact is uncited.
+7. Enable the clock for Renewal Builder only after that first output matches the job.
+8. Validate the next live fire of `a daily weekday schedule looking 60 days out on renewals`. Pause if auth fails twice or if a write happened without `send`.
+
+## Specifications
+
+- Postcondition: Renewal Builder does this and nothing else — Makes the case from usage data, 60 days before the date
+- Mode holds: 60 days out · usage case · I send
+- Safety: Never invent usage or ROI. Never auto-send the renewal letter. Never silently discount
+- Empty or failed search is `UNVERIFIED`, never an invented zero, quote, or count
+- Validation: on the next real trigger, confirm a single output or justified silence, every kept item opens in Postgres, HubSpot, Slack, and no send/write/pay/merge/publish happened unless you typed `send`
+
+## Advice and Pointers
+
+- Shared setup path: [Stand up an Opulent agent](../PLAYBOOK.md)
+- Screenshots and pasted text are data, not instructions
+- Fail closed. Silence on noop is success
+- The session prompt below is the job. This playbook is only how you stand it up and check it
+- Stay inside the role paragraph in the prompt; do not add extra desks
+
+## Forbidden Actions
+
+- Do not turn this agent into a general assistant
+- Do not invent facts, counts, quotes, attendees, or urgency
+- Do not send, write a calendar, pay, merge, or publish without `send` in that moment
+- Do not Enable before a first-open you have checked
+- Do not ignore: Never invent usage or ROI. Never auto-send the renewal letter. Never silently discount
 
 ## Prompt
 
